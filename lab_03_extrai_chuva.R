@@ -6,10 +6,11 @@
 
 # packages
 library(tidyverse)
+library(fields)
 
 # directory and file names
-file_functions <- "functions.R"
 dir_data <- "data"
+file_functions <- "functions.R"
 file_radar_pattern <- "Nexrad/*.dat"
 
 
