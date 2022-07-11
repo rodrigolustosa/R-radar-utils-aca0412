@@ -37,7 +37,7 @@ y0        <- 0.
 lat_radar <- -(23 + 33/60 +  42.2/3600)
 lon_radar <- -(46 + 44/60 +  06.4/3600)
 
-;   ################# Dimensoes dos campos de chuva e matriz de navegacao
+#   ################# Dimensoes dos campos de chuva e matriz de navegacao
 nbins = round(rmax/gatesize) #+ 1
 nazim = round(360./delta_azi)#+ 1
 # nbins = fix(rmax/gatesize) 
@@ -59,7 +59,7 @@ ypolar <- xypolar$ypolar
 # Nexrad
 path <- file.path(dir_data,file_radar_pattern)
 file_radar <- Sys.glob(path)
-pfiles <- length(files_nexrad)
+pfiles <- length(file_radar)
 for(ff in 1:pfiles){
   chuva <- le_nexrad_ascii(file_radar[ff],nazim,nbins,delta_azi,gatesize)
   print(file_radar[ff])

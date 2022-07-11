@@ -116,7 +116,8 @@ yy1=c(ylat0,ylat1)
 file_output <- str_c('ppi_cth_', format(cth$date,"%y-%m-%d_%H-%M"), '.png')
 path <- file.path(dir_output,file_output)
 png(path,width = 16,height = 16,units="cm",res=100)
-imagePlot(xlixo,ylixo,cth_clean$ppi_final,legend.lab = "Z (dBZ)",
+imagePlot(xlixo,ylixo,cth_clean$ppi_final,
+          legend.lab = "Z (dBZ)",xlab="Longitude",ylab="Latitude",
           xlim=c(lon0,lon1),ylim=c(lat0,lat1),zlim=c(0.1,71))
 # map("world", add = TRUE,resolution = 0)
 # plot(states$geom,add=TRUE)
@@ -134,7 +135,7 @@ file_output <- str_c('ppi_xpol_', format(cth$date,"%y-%m-%d_%H-%M"), '.png')
 path <- file.path(dir_output,file_output)
 png(path,width = 16,height = 16,units="cm",res=100)
 imagePlot(rlon_xpol[,,2],rlat_xpol[,,2],xpol$volscan[2,,],
-          legend.lab = "Z (dBZ)",
+          legend.lab = "Z (dBZ)",xlab="Longitude",ylab="Latitude",
           xlim=c(lon0,lon1),ylim=c(lat0,lat1),zlim=c(0.1,71))
 points(lon_xpol,lat_xpol,pch=8)
 points(lon_cth,lat_cth,pch=8)
@@ -151,7 +152,8 @@ file_output <- str_c('cross_cth_', format(cth$date,"%y-%m-%d_%H-%M"), '.png')
 path <- file.path(dir_output,file_output)
 png(path,width = 16,height = 16,units="cm",res=100)
 imagePlot(cross_section$xdist,cross_section$zdist,cross_section$cross,
-          legend.lab = "Z (dBZ)",ylim=c(0,15),zlim=c(.1,71))
+          legend.lab = "Z (dBZ)",xlab="Longitude",ylab="Height (km)",
+          ylim=c(0,15),zlim=c(.1,71))
 lines(cross_section$xdist[,20],cross_section$zdist[,20])
 lines(cross_section$xdist[,1],cross_section$zdist[,1])
 title(paste("CTH -",cth$yymmdd))
@@ -163,8 +165,8 @@ file_output <- str_c('cross_xpol_', format(cth$date,"%y-%m-%d_%H-%M"), '.png')
 path <- file.path(dir_output,file_output)
 png(path,width = 16,height = 16,units="cm",res=100)
 imagePlot(cross_section$xdist_xpol,cross_section$zdist_xpol,
-          cross_section$cross_xpol,legend.lab = "Z (dBZ)",
-          ylim=c(0,15),zlim=c(.1,71))
+          cross_section$cross_xpol,ylim=c(0,15),zlim=c(.1,71),
+          legend.lab = "Z (dBZ)",xlab="Longitude",ylab="Height (km)",)
 lines(cross_section$xdist_xpol[,13],cross_section$zdist_xpol[,13])
 lines(cross_section$xdist_xpol[,1],cross_section$zdist_xpol[,1])
 title(paste("XPOL -",cth$yymmdd))
@@ -176,8 +178,8 @@ file_output <- str_c('cross_xpolc_', format(cth$date,"%y-%m-%d_%H-%M"), '.png')
 path <- file.path(dir_output,file_output)
 png(path,width = 16,height = 16,units="cm",res=100)
 imagePlot(cross_section$xdist_xpol,cross_section$zdist_xpol,
-          cross_section$cross_corrected,legend.lab = "Z (dBZ)",
-          ylim=c(0,15),zlim=c(.1,71))
+          cross_section$cross_corrected,ylim=c(0,15),zlim=c(.1,71),
+          legend.lab = "Z (dBZ)",xlab="Longitude",ylab="Height (km)")
 lines(cross_section$xdist_xpol[,13],cross_section$zdist_xpol[,13])
 lines(cross_section$xdist_xpol[,1],cross_section$zdist_xpol[,1])
 title(paste("XPOLC -",cth$yymmdd))

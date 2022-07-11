@@ -86,7 +86,7 @@ dist  <- seq(gatesize/2,rmax,gatesize)
 
 # plot data (cartesian)
 imagePlot(x,y,chuva,zlim=c(0,60),#ifelse(is.na(chuva),-99,chuva),zlim=c(-99,60),
-          main="Cartesianas",xlab="Oeste-Leste (km)",ylab="Sul-Norte (km)",
+          main="Cartesiana",xlab="Oeste-Leste (km)",ylab="Sul-Norte (km)",
           legend.lab="Z(dBZ)")
 abline(h=0,lty=2);abline(v=0,lty=2)
 
