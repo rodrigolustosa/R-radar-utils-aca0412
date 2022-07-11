@@ -166,7 +166,7 @@ path <- file.path(dir_output,file_output)
 png(path,width = 16,height = 16,units="cm",res=100)
 imagePlot(cross_section$xdist_xpol,cross_section$zdist_xpol,
           cross_section$cross_xpol,ylim=c(0,15),zlim=c(.1,71),
-          legend.lab = "Z (dBZ)",xlab="Longitude",ylab="Height (km)",)
+          legend.lab = "Z (dBZ)",xlab="Longitude",ylab="Height (km)")
 lines(cross_section$xdist_xpol[,13],cross_section$zdist_xpol[,13])
 lines(cross_section$xdist_xpol[,1],cross_section$zdist_xpol[,1])
 title(paste("XPOL -",cth$yymmdd))
